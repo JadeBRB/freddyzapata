@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Freddy Zapata — Consultor Independiente Internacional</title>
+  <meta name="description" content="José Alfredo Rodríguez Zapata. Consultor Internacional especialista en sistematización, visualización de datos cualitativos, investigación educativa e IA."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+  <a href="#main" class="skip-link">Ir al contenido principal</a>
+
+  <!-- NAV -->
+  <nav role="banner" aria-label="Navegación principal">
+    <div class="nav-logo">
+      <img src="./assets/images/foto-perfil.png" alt="Logo Freddy Zapata" width="46" height="46"/>
+      <div class="nav-logo-text">Freddy Zapata<span>Consultor Internacional</span></div>
+    </div>
+    <ul class="nav-links" role="list">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#dataviz">Data Viz</a></li>
+      <li><a href="#formacion">Formación</a></li>
+      <li><a href="#contacto" class="nav-cta">Contactar</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Menú móvil">
+    <a href="#servicios" class="mobile-link">Servicios</a>
+    <a href="#sobre-mi" class="mobile-link">Sobre mí</a>
+    <a href="#dataviz" class="mobile-link">Data Viz</a>
+    <a href="#formacion" class="mobile-link">Formación & Talleres</a>
+    <a href="#contacto" class="m-cta mobile-link"><i class="fa-solid fa-envelope"></i> Contactar ahora</a>
+  </nav>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-photo-mobile" aria-hidden="true"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <div class="hero-badge">Consultor Independiente Internacional</div>
+        <h1 id="hero-heading">José <span>Alfredo</span><br/>Rodríguez Zapata</h1>
+        <p class="hero-subtitle">Doctor en Investigación Educativa · Zapopan, Jalisco, México</p>
+        <p class="hero-desc">Especialista en sistematización metodológica, visualización de datos cualitativos y diseño de proyectos para organismos internacionales. Más de 23 años transformando datos complejos en conocimiento claro y accionable.</p>
+        <div class="hero-btns">
+          <a href="#servicios" class="btn-primary">Ver mis servicios</a>
+          <a href="#contacto" class="btn-teal">Hablemos de tu proyecto</a>
+        </div>
+        <div class="hero-stats" role="list">
+          <div class="stat" role="listitem"><div class="stat-num">23+</div><div class="stat-label">Años de<br/>experiencia</div></div>
+          <div class="stat" role="listitem"><div class="stat-num">8</div><div class="stat-label">Países<br/>OXFAM LAC</div></div>
+          <div class="stat" role="listitem"><div class="stat-num">7+</div><div class="stat-label">Publicaciones<br/>indexadas</div></div>
+          <div class="stat" role="listitem"><div class="stat-num">PhD</div><div class="stat-label">Invest.<br/>Educativa</div></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="accent-bar" aria-hidden="true"></div>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="services-bg" aria-labelledby="s1">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-tag">Servicios Científicos-Digitales</div>
+          <h2 class="section-title" id="s1">¿En qué puedo ayudarte?</h2>
+          <p class="section-sub">Servicios especializados para organismos internacionales, instituciones académicas y sectores público y privado.</p>
+        </div>
+        <div class="services-grid">
+          <a href="#servicios" class="service-card fade-in">
+            <div class="service-icon"><i class="fa-solid fa-earth-americas"></i></div>
+            <h3>Consultoría Internacional</h3>
+            <p>Diseño y ejecución de consultorías técnicas para organismos como IICA, OXFAM y dependencias gubernamentales. Sistematización de procesos participativos, notas técnicas, guías metodológicas y productos de impacto.</p>
+            <div class="service-tags"><span class="tag">IICA / ONU</span><span class="tag">OXFAM LAC</span><span class="tag">Políticas públicas</span><span class="tag">REDD+</span></div>
+          </a>
+          <a href="#dataviz" class="service-card fade-in">
+            <div class="service-icon"><i class="fa-solid fa-chart-bar"></i></div>
+            <h3>DATA VIZ Cualitativa</h3>
+            <p>Visualización de datos cualitativos como especialidad técnica diferenciadora. Triangulación de datos, matrices de análisis, esquemas conceptuales e infografías que convierten información compleja en productos aplicables.</p>
+            <div class="service-tags"><span class="tag">Triangulación</span><span class="tag">Matrices</span><span class="tag">Infografías</span><span class="tag">Análisis cualitativo</span></div>
+          </a>
+          <a href="#sobre-mi" class="service-card fade-in">
+            <div class="service-icon org"><i class="fa-solid fa-file-pen"></i></div>
+            <h3>Artículos & Acompañamiento en Titulación</h3>
+            <p>Diseño y redacción de artículos para revistas indexadas (SCOPUS, WoS, Latindex). Humanización de textos con IA. También ofrezco <strong>acompañamiento integral en procesos de titulación</strong> de licenciatura, maestría y doctorado, integrando el uso ético y estratégico de la IA generativa en cada etapa.</p>
+            <div class="service-tags"><span class="tag">Revistas indexadas</span><span class="tag">APA 7</span><span class="tag">Humanización IA</span><span class="tag org">Licenciatura</span><span class="tag org">Maestría</span><span class="tag org">Doctorado</span></div>
+          </a>
+          <a href="#formacion" class="service-card fade-in">
+            <div class="service-icon org"><i class="fa-solid fa-robot"></i></div>
+            <h3>Cursos de IA Aplicada</h3>
+            <p>Formación práctica en inteligencia artificial generativa adaptada a cualquier sector: educación, salud, derecho, negocios y gobierno. Desde cero hasta nivel avanzado, con enfoque en productividad real y ética en el uso de IA.</p>
+            <div class="service-tags"><span class="tag">Educación</span><span class="tag">Salud</span><span class="tag">Legal</span><span class="tag">Empresas</span><span class="tag">Gobierno</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section id="sobre-mi" class="about-bg" aria-labelledby="s2">
+      <div class="container">
+        <div class="about-inner">
+          <div class="about-visual fade-in">
+            <img src="./assets/images/foto-perfil.png" alt="José Alfredo Rodríguez Zapata" class="about-photo"/>
+            <h3>José Alfredo<br/>Rodríguez Zapata</h3>
+            <p>ORCID: 0009-0004-9716-8834</p>
+            <div class="about-orgs">
+              <span class="org-chip">OXFAM LAC</span><span class="org-chip">IICA</span>
+              <span class="org-chip">SEMADET</span><span class="org-chip">ISIDM</span>
+              <span class="org-chip">COMIE</span><span class="org-chip">CINVESTAV</span><span class="org-chip">ARMCACE</span>
+            </div>
+          </div>
+          <div class="about-text fade-in">
+            <div class="section-tag">Sobre mí</div>
+            <h2 class="section-title" id="s2">23 años construyendo conocimiento que transforma</h2>
+            <p>Soy Doctor en Investigación Educativa Aplicada por el ISIDM (Zapopan, Jalisco). Mi trabajo cruza la academia con la consultoría internacional, combinando rigor metodológico con productos que llegan a las personas e instituciones que los necesitan.</p>
+            <p>He colaborado con <strong style="color:var(--teal)">OXFAM Latinoamérica</strong> en investigación regional de 8 países, con <strong style="color:var(--teal)">IICA/SAIA</strong> en enfoques de juventudes para sistemas agroalimentarios de las Américas, y con el <strong style="color:var(--teal)">Gobierno de Jalisco</strong> en salvaguardas REDD+ para la acción climática.</p>
+            <ul class="expertise-list">
+              <li>Sistematización metodológica y procesos participativos multi-actor</li>
+              <li>Visualización de datos cualitativos [DATA VIZ] — especialidad técnica</li>
+              <li>Investigación con juventudes, género e interseccionalidad</li>
+              <li>Gobernanza ambiental — estándares REDD+, TREES/LEAF</li>
+              <li>IA Generativa aplicada a investigación social y educación</li>
+              <li>Acompañamiento en procesos de titulación (licenciatura, maestría, doctorado)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DATA VIZ -->
+    <section id="dataviz" class="dataviz-bg" aria-labelledby="s3">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-tag">Especialidad técnica</div>
+          <h2 class="section-title" id="s3">Visualización de Datos Cualitativos</h2>
+          <p class="section-sub">Convierto procesos de investigación complejos en productos visuales claros, rigurosos y aplicables para equipos técnicos y no técnicos.</p>
+        </div>
+        <div class="dataviz-card fade-in">
+          <h3>¿Qué tipos de DATA VIZ realizo?</h3>
+          <p>Desde matrices de triangulación hasta guías metodológicas visuales, mis productos garantizan que la información compleja sea comprensible y lista para la toma de decisiones institucional.</p>
+          <div class="viz-types">
+            <div class="viz-item"><strong>Matrices analíticas</strong>Codificación y categorización de datos cualitativos en formato visual</div>
+            <div class="viz-item"><strong>Triangulación de datos</strong>Integración visual de encuestas, grupos focales y entrevistas</div>
+            <div class="viz-item"><strong>Infografías de investigación</strong>Síntesis visual de hallazgos para reportes y publicaciones</div>
+            <div class="viz-item"><strong>Listas de verificación</strong>Herramientas prácticas por etapa para equipos técnicos</div>
+            <div class="viz-item"><strong>Marcos conceptuales</strong>Esquemas de relaciones entre categorías y variables</div>
+            <div class="viz-item"><strong>Indicadores visuales</strong>Tableros de monitoreo y evaluación de proyectos</div>
+          </div>
+          <a href="#contacto" class="btn-primary" style="display:inline-block">Solicitar una muestra</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESO -->
+    <section id="proceso" class="process-bg" aria-labelledby="s4">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-tag">Cómo trabajo</div>
+          <h2 class="section-title" id="s4">Mi proceso de consultoría</h2>
+          <p class="section-sub">Un flujo claro, transparente y orientado a resultados que garantiza productos de calidad internacional.</p>
+        </div>
+        <div class="steps">
+          <div class="step fade-in"><div class="step-num">1</div><div class="step-body"><h4>Diagnóstico inicial</h4><p>Reunión virtual para entender tus necesidades, contexto institucional y términos de referencia.</p></div></div>
+          <div class="step fade-in"><div class="step-num">2</div><div class="step-body"><h4>Propuesta técnica y económica</h4><p>Productos, cronograma, metodología y forma de pago por entregable, clara y detallada.</p></div></div>
+          <div class="step fade-in"><div class="step-num org">3</div><div class="step-body"><h4>Diseño de instrumentos</h4><p>Cuestionarios, guías de grupos focales y protocolos de entrevista adaptados a tu contexto.</p></div></div>
+          <div class="step fade-in"><div class="step-num org">4</div><div class="step-body"><h4>Análisis y sistematización</h4><p>Análisis cualitativo avanzado, triangulación de fuentes y síntesis conceptual rigurosa.</p></div></div>
+          <div class="step fade-in"><div class="step-num">5</div><div class="step-body"><h4>Visualización y redacción</h4><p>DATA VIZ cualitativa: matrices, esquemas, infografías y productos listos para publicar.</p></div></div>
+          <div class="step fade-in"><div class="step-num">6</div><div class="step-body"><h4>Validación y entrega final</h4><p>Retroalimentación iterativa para asegurar pertinencia, coherencia y satisfacción total.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLIENTES -->
+    <section class="clients-bg" aria-labelledby="s5">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-tag">Experiencia documentada</div>
+          <h2 class="section-title" id="s5">Instituciones con las que he colaborado</h2>
+        </div>
+        <div class="clients-grid">
+          <div class="client-card fade-in"><div class="client-logo"><div class="client-dot"></div><span>OXFAM LAC</span></div><p>"Investigador contribuyente en 'Rompiendo Moldes de la Violencia y Desigualdad en Latinoamérica' — investigación en 8 países con más de 4,700 encuestas, 47 grupos focales y 49 entrevistas."</p><div class="client-meta">Investigador Contribuyente — Consultor Senior <span>· Agosto 2024</span></div></div>
+          <div class="client-card fade-in"><div class="client-logo"><div class="client-dot"></div><span>IICA — SAIA</span></div><p>"Consultoría para la incorporación del enfoque de juventudes e intergeneracional en proyectos de sanidad agropecuaria, inocuidad y calidad de los alimentos en las Américas."</p><div class="client-meta">Consultor Senior — Enfoque de Juventudes <span>· 2026</span></div></div>
+          <div class="client-card fade-in"><div class="client-logo"><div class="client-dot"></div><span>SEMADET Jalisco</span></div><p>"Implementación del Plan de Conformidad de Salvaguardas REDD+ del estado de Jalisco, en el marco del Estándar TREES de la Coalición LEAF."</p><div class="client-meta">Consultor Técnico — Talleres REDD+ <span>· 2025</span></div></div>
+        </div>
+      </div>
+    </section>
+    <!-- FORMACIÓN -->
+    <section id="formacion" class="training-bg" aria-labelledby="s6">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-tag">Formación & Talleres</div>
+          <h2 class="section-title" id="s6">Aprende a usar la IA en tu trabajo</h2>
+          <p class="section-sub">Cursos y talleres presenciales o virtuales, adaptados a cualquier sector. Sin tecnicismos, con resultados prácticos desde el primer día.</p>
+        </div>
+        <div class="training-grid">
+          <div class="training-card fade-in"><h4><i class="fa-solid fa-graduation-cap"></i> IA para Profesionales de la Educación</h4><p>Planeación, evaluación, diseño de instrumentos y redacción académica potenciada con IA. Ideal para docentes, investigadores y directivos.</p><div class="pills"><span class="pill">Docentes</span><span class="pill">Investigadores</span><span class="pill">Directivos</span><span class="pill">Posgrado</span></div></div>
+          <div class="training-card org fade-in"><h4><i class="fa-solid fa-scale-balanced"></i> IA para Abogados y el Sector Legal</h4><p>Redacción jurídica, análisis de contratos, síntesis de expedientes y productividad legal potenciada. Casos prácticos del ámbito jurídico.</p><div class="pills"><span class="pill org">Abogados</span><span class="pill org">Notarios</span><span class="pill org">Litigantes</span></div></div>
+          <div class="training-card teal fade-in"><h4><i class="fa-solid fa-hospital"></i> IA en Salud y Ciencias Médicas</h4><p>Redacción clínica, revisión de literatura, diseño de investigación. Ética y seguridad incluidas para todo el equipo de salud.</p><div class="pills"><span class="pill">Médicos</span><span class="pill">Enfermería</span><span class="pill">Investigación clínica</span></div></div>
+          <div class="training-card org fade-in"><h4><i class="fa-solid fa-building"></i> IA para Empresas y Gobierno</h4><p>Productividad operativa, análisis de datos y comunicación institucional. Para equipos directivos, comunicación y gestión pública.</p><div class="pills"><span class="pill org">Empresas</span><span class="pill org">PYMES</span><span class="pill org">Gobierno</span><span class="pill org">ONG</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="contact-bg" aria-labelledby="s7">
+      <div class="container">
+        <div class="contact-inner">
+          <div class="contact-info fade-in">
+            <div class="section-tag">Hablemos</div>
+            <h2 class="section-title" id="s7">¿Tienes un proyecto en mente?</h2>
+            <p class="section-sub">Disponible para consultorías internacionales, talleres, artículos y acompañamiento en titulación.</p>
+            <div class="contact-details">
+              <div class="contact-item"><div class="ci-icon"><i class="fa-brands fa-whatsapp"></i></div><div><div class="ci-label">WhatsApp / Teléfono</div><div class="ci-val"><a href="tel:+523337229584">(+52) 333 722 9584</a></div></div></div>
+              <div class="contact-item"><div class="ci-icon"><i class="fa-solid fa-envelope"></i></div><div><div class="ci-label">Correo ISIDM</div><div class="ci-val"><a href="mailto:jose.rodriguez@isidm.mx">jose.rodriguez@isidm.mx</a></div></div></div>
+              <div class="contact-item"><div class="ci-icon"><i class="fa-solid fa-envelope"></i></div><div><div class="ci-label">Correo SEJ</div><div class="ci-val"><a href="mailto:jose.rodriguezz@jaliscoedu.mx">jose.rodriguezz@jaliscoedu.mx</a></div></div></div>
+              <div class="contact-item"><div class="ci-icon"><i class="fa-brands fa-linkedin"></i></div><div><div class="ci-label">LinkedIn</div><div class="ci-val"><a href="https://www.linkedin.com/in/freddyzapata" target="_blank" rel="noopener noreferrer">linkedin.com/in/freddyzapata</a></div></div></div>
+              <div class="contact-item"><div class="ci-icon"><i class="fa-solid fa-location-dot"></i></div><div><div class="ci-label">Ubicación</div><div class="ci-val">Zapopan, Jalisco, México</div></div></div>
+            </div>
+          </div>
+          <div class="contact-form fade-in">
+            <h3>Escríbeme directamente</h3>
+            <div class="form-group"><label for="nombre">Nombre completo *</label><input type="text" id="nombre" placeholder="Tu nombre" required/></div>
+            <div class="form-group"><label for="email">Correo electrónico *</label><input type="email" id="email" placeholder="tu@correo.com" required/></div>
+            <div class="form-group">
+              <label for="servicio">Servicio de interés</label>
+              <select id="servicio">
+                <option value="">Selecciona un servicio</option>
+                <option>Consultoría Internacional</option>
+                <option>DATA VIZ Cualitativa</option>
+                <option>Artículo de Investigación</option>
+                <option>Titulación — Licenciatura</option>
+                <option>Titulación — Maestría</option>
+                <option>Titulación — Doctorado</option>
+                <option>Curso de IA Aplicada</option>
+                <option>Taller o Conferencia</option>
+                <option>Otro</option>
+              </select>
+            </div>
+            <div class="form-group"><label for="mensaje">Cuéntame tu proyecto *</label><textarea id="mensaje" placeholder="Describe brevemente lo que necesitas..." required></textarea></div>
+            <button type="button" class="btn-send" id="btnSend">Enviar por WhatsApp <i class="fa-brands fa-whatsapp"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="footer-links">
+      <a href="#servicios">Servicios</a><a href="#sobre-mi">Sobre mí</a>
+      <a href="#dataviz">Data Viz</a><a href="#formacion">Formación</a><a href="#contacto">Contacto</a>
+    </div>
+    <p>© 2026 <strong>José Alfredo Rodríguez Zapata</strong> — Consultor Independiente Internacional</p>
+    <p style="margin-top:.35rem">Zapopan, Jalisco, México &nbsp;·&nbsp; ORCID: 0009-0004-9716-8834</p>
+  </footer>
+
+  <a href="https://wa.me/523337229584" class="fab-wa" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+    <script src="./script.js"></script>
+</body>
+</html>
