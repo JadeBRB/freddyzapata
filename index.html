@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Freddy Zapata — Consultor Independiente Internacional</title>
+  <title>Freddy Zapata — Asesor y consultor Internacional</title>
   <meta name="description" content="José Alfredo Rodríguez Zapata. Consultor Internacional especialista en sistematización, visualización de datos cualitativos, investigación educativa e IA."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
@@ -11,15 +11,35 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
+
+  <!-- ANIMATED CANVAS (blobs + particles behind everything) -->
+  <div class="blob-canvas" id="blobCanvas">
+    <div class="blob-main" id="blobMain"></div>
+  </div>
+  <div class="global-particles" id="globalParticles"></div>
+  <div class="global-grid" aria-hidden="true"></div>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- INK SCROLL LINE -->
+  <div class="ink-path-wrap" aria-hidden="true">
+    <svg id="inkSvg" viewBox="0 0 6 1000" preserveAspectRatio="none">
+      <path class="ink-line" id="inkLine" d="M3,0 L3,1000"/>
+    </svg>
+  </div>
+
   <a href="#main" class="skip-link">Ir al contenido principal</a>
 
   <!-- NAV -->
   <nav role="banner" aria-label="Navegación principal">
     <div class="nav-logo">
       <img src="./assets/images/foto-perfil.png" alt="Logo Freddy Zapata" width="46" height="46"/>
-      <div class="nav-logo-text">Freddy Zapata<span>Consultor Internacional</span></div>
+      <div class="nav-logo-text">Freddy Zapata<span>IA changes my life</span></div>
     </div>
     <ul class="nav-links" role="list">
+      <li><a href="#si-soy">Sí Soy</a></li>
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#sobre-mi">Sobre mí</a></li>
       <li><a href="#dataviz">Data Viz</a></li>
@@ -31,10 +51,11 @@
     </button>
   </nav>
   <nav class="mobile-menu" id="mobileMenu" aria-label="Menú móvil">
+    <a href="#si-soy" class="mobile-link">Sí Soy</a>
     <a href="#servicios" class="mobile-link">Servicios</a>
     <a href="#sobre-mi" class="mobile-link">Sobre mí</a>
     <a href="#dataviz" class="mobile-link">Data Viz</a>
-    <a href="#formacion" class="mobile-link">Formación & Talleres</a>
+    <a href="#formacion" class="mobile-link">Curso intensivo de 5 semanas</a>
     <a href="#contacto" class="m-cta mobile-link"><i class="fa-solid fa-envelope"></i> Contactar ahora</a>
   </nav>
 
@@ -42,13 +63,14 @@
 
     <!-- HERO -->
     <section class="hero" aria-labelledby="hero-heading">
+      <canvas id="heroConstellation"></canvas>
       <div class="hero-photo-mobile" aria-hidden="true"></div>
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="container hero-content">
-        <div class="hero-badge">Consultor Independiente Internacional</div>
-        <h1 id="hero-heading">José <span>Alfredo</span><br/>Rodríguez Zapata</h1>
-        <p class="hero-subtitle">Doctor en Investigación Educativa · Zapopan, Jalisco, México</p>
-        <p class="hero-desc">Especialista en sistematización metodológica, visualización de datos cualitativos y diseño de proyectos para organismos internacionales. Más de 23 años transformando datos complejos en conocimiento claro y accionable.</p>
+        <div class="hero-badge">Asesor y consultor Internacional</div>
+        <h1 id="hero-heading">José <span class="glitch" data-text="Alfredo">Alfredo</span><br/>Rodríguez Zapata</h1>
+        <p class="hero-subtitle">Doctor en Investigación Educativa · Jalisco, México</p>
+        <p class="hero-desc">Ayudo a profesionistas a transformar su forma de trabajar mediante IA, sistematización metodológica y análisis de datos. Más de 20 años convirtiendo información compleja en decisiones claras y accionables</p>
         <div class="hero-btns">
           <a href="#servicios" class="btn-primary">Ver mis servicios</a>
           <a href="#contacto" class="btn-teal">Hablemos de tu proyecto</a>
@@ -63,6 +85,82 @@
     </section>
 
     <div class="accent-bar" aria-hidden="true"></div>
+
+    <!-- SI SOY -->
+    <section id="si-soy" class="sisoy-bg" aria-labelledby="sisoy-heading">
+      <div class="sisoy-particles" id="sisoyParticles"></div>
+      <div class="sisoy-glow1"></div>
+      <div class="sisoy-glow2"></div>
+      <div class="sisoy-glow3"></div>
+
+      <div class="container sisoy-inner">
+        <div class="section-header fade-in">
+          <div class="section-tag">¿Te identificas?</div>
+          <h2 class="section-title" id="sisoy-heading">Sí <span class="sisoy-em">soy</span></h2>
+          <p class="section-sub">Si eres docente, investigador/a o profesionista… <strong>esto es para ti</strong></p>
+        </div>
+
+        <!-- CAROUSEL -->
+        <div class="sisoy-carousel fade-in">
+          <div class="sisoy-track" id="sisoyTrack">
+            <div class="sisoy-slide active">
+              <div class="sisoy-slide-icon"><i class="fa-solid fa-battery-quarter"></i></div>
+              <p class="sisoy-slide-text">Trabajas <em>mucho</em> pero avanzas <em>poco</em> — y no entiendes por qué.</p>
+            </div>
+            <div class="sisoy-slide">
+              <div class="sisoy-slide-icon"><i class="fa-solid fa-bolt"></i></div>
+              <p class="sisoy-slide-text">Sientes que podrías hacer <em>más con menos esfuerzo</em>, pero no sabes cómo.</p>
+            </div>
+            <div class="sisoy-slide">
+              <div class="sisoy-slide-icon"><i class="fa-solid fa-robot"></i></div>
+              <p class="sisoy-slide-text">Sabes que la IA es importante, pero <em>no sabes cómo aplicarla</em> bien a tu trabajo.</p>
+            </div>
+            <div class="sisoy-slide">
+              <div class="sisoy-slide-icon"><i class="fa-solid fa-folder-open"></i></div>
+              <p class="sisoy-slide-text">Tienes proyectos detenidos — <em>tesis, clases, investigación, informes</em> — sin avanzar.</p>
+            </div>
+          </div>
+          <div class="sisoy-dots" id="sisoyDots">
+            <span class="sisoy-dot active" onclick="sisoyGoTo(0)"></span>
+            <span class="sisoy-dot" onclick="sisoyGoTo(1)"></span>
+            <span class="sisoy-dot" onclick="sisoyGoTo(2)"></span>
+            <span class="sisoy-dot" onclick="sisoyGoTo(3)"></span>
+          </div>
+        </div>
+
+        <!-- GOLPE DE REALIDAD -->
+        <div class="sisoy-reality fade-in" id="sisoyReality" onclick="sisoyToggleR()">
+          <div class="sisoy-reality-header">
+            <div class="sisoy-reality-badge"><i class="fa-solid fa-triangle-exclamation"></i> Golpe de realidad</div>
+            <div class="sisoy-reality-arrow" id="sisoyArrow"><i class="fa-solid fa-chevron-down"></i></div>
+          </div>
+          <p class="sisoy-reality-main">No es falta de capacidad… <span>es falta de sistema.</span></p>
+          <div class="sisoy-reality-body" id="sisoyRealityBody">
+            <p class="sisoy-reality-sub">El problema no es la IA… es cómo la estás usando. La mayoría:</p>
+            <div class="sisoy-mistakes">
+              <div class="sisoy-mistake"><div class="sisoy-mx"><i class="fa-solid fa-xmark"></i></div> Usa prompts básicos sin estructura</div>
+              <div class="sisoy-mistake"><div class="sisoy-mx"><i class="fa-solid fa-xmark"></i></div> No tiene un método claro</div>
+              <div class="sisoy-mistake"><div class="sisoy-mx"><i class="fa-solid fa-xmark"></i></div> Depende de prueba y error</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIFERENTE -->
+        <div class="sisoy-dif fade-in">
+          <div class="sisoy-dif-icon"><i class="fa-solid fa-check"></i></div>
+          <div>
+            <p class="sisoy-dif-label">Aquí harás algo distinto:</p>
+            <p class="sisoy-dif-text">Aprendes un sistema claro para usar IA en tu trabajo real.</p>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="sisoy-cta fade-in">
+          <p class="sisoy-cta-quote">La IA no va a reemplazarte…<br/><strong>Pero alguien que la use mejor que tú, sí.</strong></p>
+          <a href="#formacion" class="btn-primary"><i class="fa-solid fa-arrow-right"></i> Quiero aprender el sistema</a>
+        </div>
+      </div>
+    </section>
 
     <!-- SERVICIOS -->
     <section id="servicios" class="services-bg" aria-labelledby="s1">
@@ -184,19 +282,53 @@
           <h2 class="section-title" id="s5">Instituciones con las que he colaborado</h2>
         </div>
         <div class="clients-grid">
-          <div class="client-card fade-in"><div class="client-logo"><div class="client-dot"></div><span>OXFAM LAC</span></div><p>"Investigador contribuyente en 'Rompiendo Moldes de la Violencia y Desigualdad en Latinoamérica' — investigación en 8 países con más de 4,700 encuestas, 47 grupos focales y 49 entrevistas."</p><div class="client-meta">Investigador Contribuyente — Consultor Senior <span>· Agosto 2024</span></div></div>
-          <div class="client-card fade-in"><div class="client-logo"><div class="client-dot"></div><span>IICA — SAIA</span></div><p>"Consultoría para la incorporación del enfoque de juventudes e intergeneracional en proyectos de sanidad agropecuaria, inocuidad y calidad de los alimentos en las Américas."</p><div class="client-meta">Consultor Senior — Enfoque de Juventudes <span>· 2026</span></div></div>
-          <div class="client-card fade-in"><div class="client-logo"><div class="client-dot"></div><span>SEMADET Jalisco</span></div><p>"Implementación del Plan de Conformidad de Salvaguardas REDD+ del estado de Jalisco, en el marco del Estándar TREES de la Coalición LEAF."</p><div class="client-meta">Consultor Técnico — Talleres REDD+ <span>· 2025</span></div></div>
+          <div class="client-card fade-in">
+            <div class="client-card-front">
+              <div class="client-logo"><div class="client-dot"></div><span>OXFAM LAC</span></div>
+              <p>"Investigador contribuyente en 'Rompiendo Moldes de la Violencia y Desigualdad en Latinoamérica' — investigación en 8 países con más de 4,700 encuestas, 47 grupos focales y 49 entrevistas."</p>
+              <div class="client-meta">Investigador Contribuyente — Consultor Senior <span>· Agosto 2024</span></div>
+            </div>
+            <div class="client-card-back">
+              <img src="./assets/images/Oxfam_logo.png" alt="OXFAM LAC"/>
+              <span class="flip-label">OXFAM LAC</span>
+            </div>
+          </div>
+
+          <div class="client-card fade-in">
+            <div class="client-card-front">
+              <div class="client-logo"><div class="client-dot"></div><span>IICA — SAIA</span></div>
+              <p>"Consultoría para la incorporación del enfoque de juventudes e intergeneracional en proyectos de sanidad agropecuaria, inocuidad y calidad de los alimentos en las Américas."</p>
+              <div class="client-meta">Consultor Senior — Enfoque de Juventudes <span>· 2026</span></div>
+            </div>
+            <div class="client-card-back">
+              <img src="./assets/images/IICA_logo.png" alt="IICA — SAIA"/>
+              <span class="flip-label">IICA — SAIA</span>
+            </div>
+          </div>
+
+          <div class="client-card fade-in">
+            <div class="client-card-front">
+              <div class="client-logo"><div class="client-dot"></div><span>SEMADET Jalisco</span></div>
+              <p>"Implementación del Plan de Conformidad de Salvaguardas REDD+ del estado de Jalisco, en el marco del Estándar TREES de la Coalición LEAF."</p>
+              <div class="client-meta">Consultor Técnico — Talleres REDD+ <span>· 2025</span></div>
+            </div>
+            <div class="client-card-back">
+              <img src="./assets/images/Semadet_logo.png" alt="SEMADET Jalisco"/>
+              <span class="flip-label">SEMADET Jalisco</span>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
+
     <!-- FORMACIÓN -->
     <section id="formacion" class="training-bg" aria-labelledby="s6">
       <div class="container">
         <div class="section-header fade-in">
-          <div class="section-tag">Formación & Talleres</div>
-          <h2 class="section-title" id="s6">Aprende a usar la IA en tu trabajo</h2>
-          <p class="section-sub">Cursos y talleres presenciales o virtuales, adaptados a cualquier sector. Sin tecnicismos, con resultados prácticos desde el primer día.</p>
+          <div class="section-tag">Curso intensivo de 5 semanas</div>
+          <h2 class="section-title" id="s6">Domina la IA y multiplica tu productividad en 5 semanas</h2>
+          <p class="section-sub">Aprende a usar IA de forma estratégica para investigar, transformar y producir resultados profesionales con claridad, velocidad y precisión.</p>
         </div>
         <div class="training-grid">
           <div class="training-card fade-in"><h4><i class="fa-solid fa-graduation-cap"></i> IA para Profesionales de la Educación</h4><p>Planeación, evaluación, diseño de instrumentos y redacción académica potenciada con IA. Ideal para docentes, investigadores y directivos.</p><div class="pills"><span class="pill">Docentes</span><span class="pill">Investigadores</span><span class="pill">Directivos</span><span class="pill">Posgrado</span></div></div>
@@ -220,7 +352,7 @@
               <div class="contact-item"><div class="ci-icon"><i class="fa-solid fa-envelope"></i></div><div><div class="ci-label">Correo ISIDM</div><div class="ci-val"><a href="mailto:jose.rodriguez@isidm.mx">jose.rodriguez@isidm.mx</a></div></div></div>
               <div class="contact-item"><div class="ci-icon"><i class="fa-solid fa-envelope"></i></div><div><div class="ci-label">Correo SEJ</div><div class="ci-val"><a href="mailto:jose.rodriguezz@jaliscoedu.mx">jose.rodriguezz@jaliscoedu.mx</a></div></div></div>
               <div class="contact-item"><div class="ci-icon"><i class="fa-brands fa-linkedin"></i></div><div><div class="ci-label">LinkedIn</div><div class="ci-val"><a href="https://www.linkedin.com/in/freddyzapata" target="_blank" rel="noopener noreferrer">linkedin.com/in/freddyzapata</a></div></div></div>
-              <div class="contact-item"><div class="ci-icon"><i class="fa-solid fa-location-dot"></i></div><div><div class="ci-label">Ubicación</div><div class="ci-val">Zapopan, Jalisco, México</div></div></div>
+              <div class="contact-item"><div class="ci-icon"><i class="fa-solid fa-location-dot"></i></div><div><div class="ci-label">Ubicación</div><div class="ci-val">Jalisco, México</div></div></div>
             </div>
           </div>
           <div class="contact-form fade-in">
@@ -252,17 +384,18 @@
 
   <footer role="contentinfo">
     <div class="footer-links">
+      <a href="#si-soy">Sí Soy</a>
       <a href="#servicios">Servicios</a><a href="#sobre-mi">Sobre mí</a>
       <a href="#dataviz">Data Viz</a><a href="#formacion">Formación</a><a href="#contacto">Contacto</a>
     </div>
     <p>© 2026 <strong>José Alfredo Rodríguez Zapata</strong> — Consultor Independiente Internacional</p>
-    <p style="margin-top:.35rem">Zapopan, Jalisco, México &nbsp;·&nbsp; ORCID: 0009-0004-9716-8834</p>
+    <p style="margin-top:.35rem">Jalisco, México &nbsp;·&nbsp; ORCID: 0009-0004-9716-8834</p>
   </footer>
 
   <a href="https://wa.me/523337229584" class="fab-wa" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
     <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
 
-    <script src="./script.js"></script>
+  <script src="./script.js"></script>
 </body>
 </html>
