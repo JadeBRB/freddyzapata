@@ -676,3 +676,15 @@ footer strong { color:var(--teal) }
   letter-spacing: .08em;
   text-transform: uppercase;
 }
+
+/* ── HIDE CUSTOM CURSOR ON TOUCH DEVICES ── */
+@media (hover: none) and (pointer: coarse) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
+
+  * {
+    cursor: auto !important;
+  }
+}

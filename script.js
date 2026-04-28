@@ -56,35 +56,39 @@ document.getElementById('btnSend').addEventListener('click', () => {
   window.open(`https://wa.me/523337229584?text=${encodeURIComponent(t)}`, '_blank', 'noopener,noreferrer');
 });
 
-// ── 4. CUSTOM CURSOR ──
-const dot  = document.getElementById('cursorDot');
-const ring = document.getElementById('cursorRing');
+// ── 4. CUSTOM CURSOR (desktop only) ──
+const isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
 
-if (dot && ring) {
-  let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+if (!isTouchDevice) {
+  const dot  = document.getElementById('cursorDot');
+  const ring = document.getElementById('cursorRing');
 
-  document.addEventListener('mousemove', e => {
-    mouseX = e.clientX; mouseY = e.clientY;
-    dot.style.left = mouseX + 'px';
-    dot.style.top  = mouseY + 'px';
-  });
+  if (dot && ring) {
+    let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
 
-  (function animateRing() {
-    ringX += (mouseX - ringX) * 0.12;
-    ringY += (mouseY - ringY) * 0.12;
-    ring.style.left = ringX + 'px';
-    ring.style.top  = ringY + 'px';
-    requestAnimationFrame(animateRing);
-  })();
+    document.addEventListener('mousemove', e => {
+      mouseX = e.clientX; mouseY = e.clientY;
+      dot.style.left = mouseX + 'px';
+      dot.style.top  = mouseY + 'px';
+    });
 
-  const hoverEls = 'a, button, [onclick], .sisoy-dot, .service-card, .step, .training-card, .client-card';
-  document.querySelectorAll(hoverEls).forEach(el => {
-    el.addEventListener('mouseenter', () => ring.classList.add('hovered'));
-    el.addEventListener('mouseleave', () => ring.classList.remove('hovered'));
-  });
+    (function animateRing() {
+      ringX += (mouseX - ringX) * 0.12;
+      ringY += (mouseY - ringY) * 0.12;
+      ring.style.left = ringX + 'px';
+      ring.style.top  = ringY + 'px';
+      requestAnimationFrame(animateRing);
+    })();
 
-  document.addEventListener('mousedown', () => ring.classList.add('clicked'));
-  document.addEventListener('mouseup',   () => ring.classList.remove('clicked'));
+    const hoverEls = 'a, button, [onclick], .sisoy-dot, .service-card, .step, .training-card, .client-card';
+    document.querySelectorAll(hoverEls).forEach(el => {
+      el.addEventListener('mouseenter', () => ring.classList.add('hovered'));
+      el.addEventListener('mouseleave', () => ring.classList.remove('hovered'));
+    });
+
+    document.addEventListener('mousedown', () => ring.classList.add('clicked'));
+    document.addEventListener('mouseup',   () => ring.classList.remove('clicked'));
+  }
 }
 
 // ── 5. MORPHING NAV ──
