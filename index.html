@@ -11,6 +11,28 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
+    <!-- PRELOADER -->
+  <div class="preloader" id="preloader">
+    <div class="pre-grid"></div>
+    <div class="pre-noise"></div>
+    <div class="glitch-bar"></div>
+    <div class="glitch-bar"></div>
+    <div class="glitch-bar"></div>
+
+    <div class="pre-logo">
+      <div class="pre-fz-wrap">
+        <div class="pre-fz-r">FZ</div>
+        <div class="pre-fz-g">FZ</div>
+        <div class="pre-fz"><span class="f">F</span><span class="z">Z</span></div>
+      </div>
+      <div class="pre-tag">IA · Investigación · Consultoría</div>
+      <div class="pre-loadbar">
+        <div class="pre-loadbar-fill" id="preLoadFill"></div>
+      </div>
+    </div>
+
+    <div class="pre-status">INICIANDO SISTEMA...</div>
+  </div>
 
   <!-- ANIMATED CANVAS (blobs + particles behind everything) -->
   <div class="blob-canvas" id="blobCanvas">
@@ -84,7 +106,7 @@
       </div>
     </section>
 
-    <div class="accent-bar" aria-hidden="true"></div>
+    <div class="glow-div"></div>
 
     <!-- SI SOY -->
     <section id="si-soy" class="sisoy-bg" aria-labelledby="sisoy-heading">
@@ -100,6 +122,7 @@
           <p class="section-sub">Si eres docente, investigador/a o profesionista… <strong>esto es para ti</strong></p>
         </div>
 
+        
         <!-- CAROUSEL -->
         <div class="sisoy-carousel fade-in">
           <div class="sisoy-track" id="sisoyTrack">
@@ -161,6 +184,7 @@
         </div>
       </div>
     </section>
+    <div class="glow-div"></div>
 
     <!-- SERVICIOS -->
     <section id="servicios" class="services-bg" aria-labelledby="s1">
@@ -198,6 +222,7 @@
         </div>
       </div>
     </section>
+    <div class="glow-div"></div>
 
     <!-- SOBRE MÍ -->
     <section id="sobre-mi" class="about-bg" aria-labelledby="s2">
@@ -230,6 +255,7 @@
         </div>
       </div>
     </section>
+    <div class="glow-div org"></div>
 
     <!-- DATA VIZ -->
     <section id="dataviz" class="dataviz-bg" aria-labelledby="s3">
@@ -255,7 +281,7 @@
       </div>
     </section>
 
-    <!-- PROCESO -->
+        <!-- PROCESO -->
     <section id="proceso" class="process-bg" aria-labelledby="s4">
       <div class="container">
         <div class="section-header fade-in">
@@ -263,13 +289,145 @@
           <h2 class="section-title" id="s4">Mi proceso de consultoría</h2>
           <p class="section-sub">Un flujo claro, transparente y orientado a resultados que garantiza productos de calidad internacional.</p>
         </div>
-        <div class="steps">
-          <div class="step fade-in"><div class="step-num">1</div><div class="step-body"><h4>Diagnóstico inicial</h4><p>Reunión virtual para entender tus necesidades, contexto institucional y términos de referencia.</p></div></div>
-          <div class="step fade-in"><div class="step-num">2</div><div class="step-body"><h4>Propuesta técnica y económica</h4><p>Productos, cronograma, metodología y forma de pago por entregable, clara y detallada.</p></div></div>
-          <div class="step fade-in"><div class="step-num org">3</div><div class="step-body"><h4>Diseño de instrumentos</h4><p>Cuestionarios, guías de grupos focales y protocolos de entrevista adaptados a tu contexto.</p></div></div>
-          <div class="step fade-in"><div class="step-num org">4</div><div class="step-body"><h4>Análisis y sistematización</h4><p>Análisis cualitativo avanzado, triangulación de fuentes y síntesis conceptual rigurosa.</p></div></div>
-          <div class="step fade-in"><div class="step-num">5</div><div class="step-body"><h4>Visualización y redacción</h4><p>DATA VIZ cualitativa: matrices, esquemas, infografías y productos listos para publicar.</p></div></div>
-          <div class="step fade-in"><div class="step-num">6</div><div class="step-body"><h4>Validación y entrega final</h4><p>Retroalimentación iterativa para asegurar pertinencia, coherencia y satisfacción total.</p></div></div>
+
+        <div class="tl-layout fade-in">
+
+          <!-- LEFT: vertical timeline -->
+          <div class="tl-left">
+            <div class="tl-spine"></div>
+            <div class="tl-steps" id="tlSteps">
+
+              <div class="tl-item active" onclick="tlSelect(0)">
+                <div class="tl-dot">
+                  <div class="tl-dot-inner">1</div>
+                  <div class="tl-dot-ring"></div>
+                </div>
+                <div class="tl-item-label">Diagnóstico inicial</div>
+              </div>
+
+              <div class="tl-item" onclick="tlSelect(1)">
+                <div class="tl-dot">
+                  <div class="tl-dot-inner">2</div>
+                  <div class="tl-dot-ring"></div>
+                </div>
+                <div class="tl-item-label">Propuesta técnica</div>
+              </div>
+
+              <div class="tl-item" onclick="tlSelect(2)">
+                <div class="tl-dot org">
+                  <div class="tl-dot-inner">3</div>
+                  <div class="tl-dot-ring"></div>
+                </div>
+                <div class="tl-item-label">Diseño de instrumentos</div>
+              </div>
+
+              <div class="tl-item" onclick="tlSelect(3)">
+                <div class="tl-dot org">
+                  <div class="tl-dot-inner">4</div>
+                  <div class="tl-dot-ring"></div>
+                </div>
+                <div class="tl-item-label">Análisis y sistematización</div>
+              </div>
+
+              <div class="tl-item" onclick="tlSelect(4)">
+                <div class="tl-dot">
+                  <div class="tl-dot-inner">5</div>
+                  <div class="tl-dot-ring"></div>
+                </div>
+                <div class="tl-item-label">Visualización y redacción</div>
+              </div>
+
+              <div class="tl-item" onclick="tlSelect(5)">
+                <div class="tl-dot">
+                  <div class="tl-dot-inner">6</div>
+                  <div class="tl-dot-ring"></div>
+                </div>
+                <div class="tl-item-label">Validación y entrega</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- RIGHT: info panel -->
+          <div class="tl-right">
+            <div class="tl-panel" id="tlPanel">
+
+              <div class="tl-panel-step active" data-i="0">
+                <div class="tl-panel-num">01</div>
+                <h3 class="tl-panel-title">Diagnóstico inicial</h3>
+                <p class="tl-panel-desc">Reunión virtual para entender tus necesidades, contexto institucional y términos de referencia. Identificamos el alcance, los actores clave y los entregables esperados.</p>
+                <div class="tl-panel-meta">
+                  <span><i class="fa-solid fa-clock"></i> 1–2 días</span>
+                  <span><i class="fa-solid fa-video"></i> Reunión virtual</span>
+                </div>
+              </div>
+
+              <div class="tl-panel-step" data-i="1">
+                <div class="tl-panel-num">02</div>
+                <h3 class="tl-panel-title">Propuesta técnica y económica</h3>
+                <p class="tl-panel-desc">Productos, cronograma, metodología y forma de pago por entregable, clara y detallada. Incluye desglose de actividades y tiempos estimados por fase.</p>
+                <div class="tl-panel-meta">
+                  <span><i class="fa-solid fa-clock"></i> 2–3 días</span>
+                  <span><i class="fa-solid fa-file-lines"></i> Documento PDF</span>
+                </div>
+              </div>
+
+              <div class="tl-panel-step" data-i="2">
+                <div class="tl-panel-num">03</div>
+                <h3 class="tl-panel-title">Diseño de instrumentos</h3>
+                <p class="tl-panel-desc">Cuestionarios, guías de grupos focales y protocolos de entrevista adaptados a tu contexto. Validación previa con equipo técnico para asegurar pertinencia cultural.</p>
+                <div class="tl-panel-meta">
+                  <span><i class="fa-solid fa-clock"></i> 3–5 días</span>
+                  <span><i class="fa-solid fa-pen-ruler"></i> Instrumentos validados</span>
+                </div>
+              </div>
+
+              <div class="tl-panel-step" data-i="3">
+                <div class="tl-panel-num">04</div>
+                <h3 class="tl-panel-title">Análisis y sistematización</h3>
+                <p class="tl-panel-desc">Análisis cualitativo avanzado, triangulación de fuentes y síntesis conceptual rigurosa. Codificación temática, matrices analíticas y memos interpretativos.</p>
+                <div class="tl-panel-meta">
+                  <span><i class="fa-solid fa-clock"></i> 5–10 días</span>
+                  <span><i class="fa-solid fa-chart-bar"></i> Matrices y reportes</span>
+                </div>
+              </div>
+
+              <div class="tl-panel-step" data-i="4">
+                <div class="tl-panel-num">05</div>
+                <h3 class="tl-panel-title">Visualización y redacción</h3>
+                <p class="tl-panel-desc">DATA VIZ cualitativa: matrices, esquemas, infografías y productos listos para publicar. Redacción de hallazgos en lenguaje accesible para audiencias técnicas y no técnicas.</p>
+                <div class="tl-panel-meta">
+                  <span><i class="fa-solid fa-clock"></i> 4–7 días</span>
+                  <span><i class="fa-solid fa-palette"></i> Infografías y reportes</span>
+                </div>
+              </div>
+
+              <div class="tl-panel-step" data-i="5">
+                <div class="tl-panel-num">06</div>
+                <h3 class="tl-panel-title">Validación y entrega final</h3>
+                <p class="tl-panel-desc">Retroalimentación iterativa para asegurar pertinencia, coherencia y satisfacción total. Entrega de todos los productos en los formatos acordados con revisiones incluidas.</p>
+                <div class="tl-panel-meta">
+                  <span><i class="fa-solid fa-clock"></i> 2–3 días</span>
+                  <span><i class="fa-solid fa-circle-check"></i> Entrega definitiva</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- nav arrows -->
+            <div class="tl-nav">
+              <button class="tl-nav-btn" id="tlPrev" onclick="tlSelect(tlCur-1)">
+                <i class="fa-solid fa-arrow-left"></i>
+              </button>
+              <div class="tl-progress" id="tlProgress">
+                <span id="tlProgressBar"></span>
+              </div>
+              <button class="tl-nav-btn" id="tlNext" onclick="tlSelect(tlCur+1)">
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -321,6 +479,7 @@
         </div>
       </div>
     </section>
+    <div class="glow-div org"></div>
 
     <!-- FORMACIÓN -->
     <section id="formacion" class="training-bg" aria-labelledby="s6">
@@ -338,6 +497,7 @@
         </div>
       </div>
     </section>
+    <div class="glow-div"></div>
 
     <!-- CONTACTO -->
     <section id="contacto" class="contact-bg" aria-labelledby="s7">

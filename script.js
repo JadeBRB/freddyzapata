@@ -14,6 +14,33 @@
    11. Blob canvas + partículas globales
    12. Si Soy — carrusel + partículas + acordeón
    ================================================================ */
+// ── PRELOADER ──
+(function () {
+  const pre      = document.getElementById('preloader');
+  const fill     = document.getElementById('preLoadFill');
+  if (!pre || !fill) return;
+
+  // prevent scroll while loading
+  document.body.style.overflow = 'hidden';
+
+  let width = 0;
+  const interval = setInterval(() => {
+    width += Math.random() * 18 + 4;
+    if (width >= 100) {
+      width = 100;
+      clearInterval(interval);
+      fill.style.width = '100%';
+
+      // wait a beat then hide
+      setTimeout(() => {
+        pre.classList.add('hidden');
+        document.body.style.overflow = '';
+      }, 600);
+    }
+    fill.style.width = width + '%';
+  }, 120);
+})();
+
 
 'use strict';
 
@@ -334,4 +361,78 @@ document.addEventListener('DOMContentLoaded', function () {
     requestAnimationFrame(draw);
   }
   draw();
+})();
+
+
+// ── INTERACTIVE TIMELINE ──
+(function () {
+  const TOTAL   = 6;
+  let tlCur     = 0;
+  window.tlCur  = tlCur;
+
+  const items    = document.querySelectorAll('.tl-item');
+  const panels   = document.querySelectorAll('.tl-panel-step');
+  const prevBtn  = document.getElementById('tlPrev');
+  const nextBtn  = document.getElementById('tlNext');
+  const progBar  = document.getElementById('tlProgressBar');
+
+  function tlSelect(n) {
+    if (n < 0 || n >= TOTAL) return;
+
+    // update items
+    items.forEach((el, i) => {
+      el.classList.remove('active', 'done');
+      if (i === n) el.classList.add('active');
+      if (i < n)  el.classList.add('done');
+    });
+
+    // update panels
+    panels.forEach((el, i) => {
+      if (el.classList.contains('active')) {
+        el.classList.remove('active');
+        el.classList.add('exit');
+        setTimeout(() => el.classList.remove('exit'), 400);
+      } else {
+        el.classList.remove('active', 'exit');
+      }
+    });
+    setTimeout(() => panels[n].classList.add('active'), 50);
+
+    // progress bar
+    progBar.style.width = ((n / (TOTAL - 1)) * 100) + '%';
+
+    // buttons
+    prevBtn.disabled = n === 0;
+    nextBtn.disabled = n === TOTAL - 1;
+
+    // scroll dot into view on mobile
+    items[n].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+
+    tlCur = n;
+    window.tlCur = n;
+  }
+
+  window.tlSelect = tlSelect;
+
+  // init
+  tlSelect(0);
+
+  // keyboard nav
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') tlSelect(tlCur + 1);
+    if (e.key === 'ArrowLeft')  tlSelect(tlCur - 1);
+  });
+
+  // swipe on mobile panel
+  let touchStartX = 0;
+  const panel = document.getElementById('tlPanel');
+  if (panel) {
+    panel.addEventListener('touchstart', e => {
+      touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+    panel.addEventListener('touchend', e => {
+      const diff = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(diff) > 50) tlSelect(tlCur + (diff < 0 ? 1 : -1));
+    }, { passive: true });
+  }
 })();
