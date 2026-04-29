@@ -33,6 +33,7 @@
 
       // wait a beat then hide
       setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'instant' });
         pre.classList.add('hidden');
         document.body.style.overflow = '';
       }, 600);
